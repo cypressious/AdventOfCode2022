@@ -1,3 +1,4 @@
+import java.util.stream.IntStream
 import kotlin.math.abs
 
 fun main() {
@@ -33,12 +34,12 @@ fun main() {
             maxY = maxOf(maxY, sensor.position.y + sensor.radius)
         }
 
-        return (minX..maxX).count { x ->
+        return IntStream.rangeClosed(minX, maxX).parallel().filter { x ->
             val p = Point(x, row)
             sensors.any { sensor ->
                 p != sensor.closestBeacon && sensor.position distanceTo p <= sensor.radius
             }
-        }
+        }.count().toInt()
     }
 
     fun part2(input: List<String>, max: Int): Long {
