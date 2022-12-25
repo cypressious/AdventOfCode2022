@@ -1,5 +1,4 @@
-import java.lang.IllegalStateException
-import kotlin.LazyThreadSafetyMode.*
+import kotlin.LazyThreadSafetyMode.NONE
 
 fun main() {
     class File(
@@ -14,7 +13,7 @@ fun main() {
         val parent: Directory?,
         val dirs: MutableList<Directory> = mutableListOf(),
         val files: MutableList<File> = mutableListOf(),
-    ){
+    ) {
         override fun toString() = name
 
         fun walkDirs(cb: (Directory) -> Unit) {

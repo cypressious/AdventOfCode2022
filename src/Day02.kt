@@ -5,7 +5,8 @@ enum class Rps(val score: Int) {
 fun main() {
     val theirRps = mapOf("A" to Rps.Rock, "B" to Rps.Paper, "C" to Rps.Scissors)
     val mineRps = mapOf("X" to Rps.Rock, "Y" to Rps.Paper, "Z" to Rps.Scissors)
-    val dominators = mapOf(Rps.Rock to Rps.Scissors, Rps.Paper to Rps.Rock, Rps.Scissors to Rps.Paper)
+    val dominators =
+        mapOf(Rps.Rock to Rps.Scissors, Rps.Paper to Rps.Rock, Rps.Scissors to Rps.Paper)
 
     fun calculateScore(their: Rps, mine: Rps): Int {
         val score = when (their) {

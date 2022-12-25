@@ -6,7 +6,8 @@ fun main() {
         val throwTargetTrue: Int,
         val throwTargetFalse: Int,
     ) {
-        fun throwTargetOf(item: Int) = if (item % divisibilityTest == 0) throwTargetTrue else throwTargetFalse
+        fun throwTargetOf(item: Int) =
+            if (item % divisibilityTest == 0) throwTargetTrue else throwTargetFalse
     }
 
     fun parse(input: List<String>) = input.chunked(7).map { chunk ->

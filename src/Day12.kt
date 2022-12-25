@@ -1,4 +1,4 @@
-import java.util.PriorityQueue
+import java.util.*
 
 fun main() {
     class Node(
@@ -21,7 +21,9 @@ fun main() {
         lateinit var end: Node
         val graph = input.map { line ->
             line.toCharArray().map { height ->
-                Node(convertHeight(height)).also { if (height == 'S') start = it; if (height == 'E') end = it }
+                Node(convertHeight(height)).also {
+                    if (height == 'S') start = it; if (height == 'E') end = it
+                }
             }
         }
 

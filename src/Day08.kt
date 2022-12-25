@@ -56,7 +56,8 @@ fun main() {
             add(grid.map { row -> row.computeDistances() })
             add(grid.map { row -> row.reversed().computeDistances().reversed() })
             add(grid.transpose().map { row -> row.computeDistances() }.transpose())
-            add(grid.transpose().map { row -> row.reversed().computeDistances().reversed() }.transpose())
+            add(grid.transpose().map { row -> row.reversed().computeDistances().reversed() }
+                .transpose())
         }
 
         val scores = grid.mapIndexed { y, row ->

@@ -22,7 +22,8 @@ sealed class PacketData : Comparable<PacketData> {
     }
 }
 
-class PacketList(val parent: PacketList?, val values: MutableList<PacketData> = mutableListOf()) : PacketData() {
+class PacketList(val parent: PacketList?, val values: MutableList<PacketData> = mutableListOf()) :
+    PacketData() {
     override fun toString() = values.joinToString(", ", prefix = "[", postfix = "]")
 }
 

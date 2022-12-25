@@ -27,7 +27,11 @@ fun main() {
 
         return when {
             //diagonal step
-            absX > 1 && absY > 0 || absY > 1 && absX > 0 -> Position(tail.x + diffX / absX, tail.y + diffY / absY)
+            absX > 1 && absY > 0 || absY > 1 && absX > 0 -> Position(
+                tail.x + diffX / absX,
+                tail.y + diffY / absY
+            )
+
             absX > 1 -> Position(tail.x + diffX / absX, tail.y)
             absY > 1 -> Position(tail.x, tail.y + diffY / absY)
             else -> tail

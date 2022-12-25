@@ -15,7 +15,7 @@ fun main() {
     }
 
     fun part2(input: List<String>): Int {
-        return input.chunked(3).sumOf { (a,b,c) ->
+        return input.chunked(3).sumOf { (a, b, c) ->
             a.first { it in b && it in c }.prio()
         }
     }
